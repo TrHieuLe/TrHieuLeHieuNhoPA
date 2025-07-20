@@ -72,12 +72,101 @@
 
    
 </style>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+  }
+
+  #intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background-color: black;
+  }
+
+  #intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo video bao phủ toàn màn */
+  }
+
+</style>
 
 
 </head>
 
 <body>
-    
+    <div id="intro">
+    <video id="introVideo" autoplay muted playsinline="auto">
+      <source src="img/veov.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+  </div>
+
+  <!-- Nội dung chính -->
+
+
+  <script>
+    const intro = document.getElementById('intro');
+    const main = document.getElementById('main'); // Giả sử bạn có <div id="main"></div>
+    const video = document.getElementById('introVideo');
+
+    // Kiểm tra loại truy cập trang
+    const navType = performance.getEntriesByType("navigation")[0]?.type;
+    const shouldSkipIntro = sessionStorage.getItem("skipIntro") === "true";
+
+    // Nếu là truy cập "quay lại" HOẶC có cờ skipIntro trong sessionStorage
+    if (navType === "back_forward" || shouldSkipIntro) {
+        intro.style.display = 'none';
+        if (main) main.style.display = 'block'; // Hiển thị nội dung chính
+        document.body.style.overflow = 'auto';
+
+        // Xóa cờ đi để lần sau vào lại web bình thường vẫn có intro
+        sessionStorage.removeItem("skipIntro"); 
+    } else {
+        // Ngược lại: luôn phát intro
+        video.addEventListener('ended', () => {
+            intro.style.display = 'none';
+            if (main) main.style.display = 'block';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fallback sau 11 giây
+        setTimeout(() => {
+            if (intro.style.display !== 'none') {
+                intro.style.display = 'none';
+                if (main) main.style.display = 'block';
+                document.body.style.overflow = 'auto';
+            }
+        }, 11000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Sửa lại bộ chọn từ 'adminLink' thành '#adminLink'
+        const loginLink = document.querySelector('#adminLink'); 
+        if (loginLink) {
+            loginLink.addEventListener('click', (e) => {
+                // Đặt cờ vào sessionStorage khi nhấn vào link
+                sessionStorage.setItem("skipIntro", "true");
+                console.log("Đã đặt cờ skipIntro.");
+            });
+        }
+        
+        
+        const logoutLink = document.querySelector('#logoutLink'); // Thay bằng ID của nút logout
+        if (logoutLink) {
+            logoutLink.addEventListener('click', (e) => {
+                sessionStorage.setItem("skipIntro", "true");
+            });
+        }
+    });
+</script>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
