@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="img/logo_kmc.png" type="image/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="description" content="Manup Template">
     <meta name="keywords" content="Manup, unica, creative, html">
@@ -26,12 +27,41 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <style>
+        /* Thêm một chút CSS để có thể cuộn trang và thấy hiệu ứng */
+        body {
+            font-family: sans-serif;
+        }
+        .placeholder {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background-color: #f0f0f0;
+        }
+        /* Style cơ bản cho phần của bạn (để trông giống ví dụ hơn) */
+        .pricing-section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; }
+        .price-item { border: 1px solid #e1e1e1; text-align: center; padding-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .price-item ul { list-style: none; padding: 15px 25px; text-align: left; }
+        .pi-price h2 { text-align: center; padding: 10px 0; }
+        .container { max-width: 1140px; margin: auto; padding: 0 15px; }
+        .row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+        .col-lg-3 { width: 25%; padding: 0 15px; box-sizing: border-box; }
         html {
   scroll-behavior: smooth;
 }
     </style>
     <!-- Header Section Begin -->
 <style>
+    .price-item {
+    padding-top: 0;
+    margin-top: 0;
+}
+.price-img {
+    margin-bottom: 15px; /* giữ khoảng cách với phần nội dung dưới */
+}
     .header-section {
         background-color: #fff;
         padding: 10px 0;
@@ -44,9 +74,9 @@
     }
 
     .logo img {
-        height: 40px;
-        width: auto;
-        display: block;
+        
+    max-width: 90px; /* giảm kích thước logo */
+
     }
 
     .nav-menu {
@@ -69,7 +99,8 @@
         font-weight: 500;
         font-size: 16px;
     }
-
+    
+    
    
 </style>
 <style>
@@ -197,6 +228,7 @@
                         </li>
                         <li><a href="./booking.html">Đặt lịch</a></li>
                         <li><a href="#team-kmc">Liên hệ chúng tôi</a></li>
+                        
                         
                     </ul>
                 </nav>
@@ -597,6 +629,92 @@ Chị từng được Trường Đại học Thủy Lợi viết bài vinh danh 
     </div>
 </section>
 <!-- Vinh danh thành viên tiêu biểu End -->
+ <section class="pricing-section set-bg spad" data-setbg="img/img-cn/bg.jpg" id="clb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Chủ nhiệm KMC qua từng giai đoạn</h2>
+                        <p>Dưới đây là các chủ nhiệm của CLB sau nhiều năm hoạt động</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="img/img-cn/thuylinh.jpg" alt="GEN I" style="width: 100%; ">
+                        </div>
+                        
+                        <div class="pi-price">
+                            <h2 style="font-size: 20px;">Chủ nhiệm GEN I</h2>
+                        </div>
+                        <ul>
+                            <li>Chị Thùy Linh Là người đặt những viên gạch đầu tiên xây dựng CLB, chị Thùy Linh không chỉ là người sáng lập mà còn là linh hồn của KMC những ngày đầu. Với tinh thần nhiệt huyết và sự tận tâm, chị đã tạo dựng một môi trường học hỏi và phát triển bản thân đầy cảm hứng cho thế hệ sinh viên đầu tiên.</li>
+                            
+                        </ul>
+                      
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="price-item">
+                        <div class="price-img">
+                            <img src="img/img-cn/duy_son.jpg" alt="GEN II" style="width: 100%;;">
+                        </div>
+                        
+                        <div class="pi-price">
+                            <h2 style="font-size: 20px">Chủ nhiệm GEN II</h2>
+                        </div>
+                        <ul>
+                            <li>Chủ nhiệm nhiệm kỳ sau là anh Duy Sơn, để tếp nối truyền thống, anh Duy Sơn mang đến làn gió mới bằng sự sáng tạo và phong cách lãnh đạo linh hoạt. Dưới sự điều hành của anh, CLB không chỉ duy trì ổn định mà còn mở rộng quy mô và tăng tính chuyên nghiệp trong các hoạt động.</li>
+                            
+                        </ul>
+                       
+                    </div>
+                </div> 
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="price-item">
+                        <!-- Ảnh phía trên -->
+                        <div class="price-img">
+                            <img src="img/img-cn/ducvan.jpg" alt="GEN III" style="width: 100%; ">
+                        </div>
+
+                        <!-- Nội dung phía dưới -->
+                        
+                        <div class="pi-price">
+                            <h2 style="font-size: 20px;">Chủ nhiệm GEN III</h2>
+                        </div>
+                        <ul>
+                            <li>Anh Bùi Đức Văn là người khơi dậy tinh thần “từ sinh viên đến diễn giả”, anh Đức Văn chú trọng vào việc đào tạo nội bộ và phát triển kỹ năng thật sự cho từng thành viên. Nhờ vậy, các buổi workshop và chương trình của CLB ngày càng được nâng cao về chất lượng</li>
+                            
+                        </ul>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="price-item">
+                        <!-- Ảnh phía trên -->
+                        <div class="price-img">
+                            <img src="img/img-cn/phwnhung.jpg" alt="GEN IV" style="width: 100%; ">
+                        </div>
+
+                        <!-- Nội dung phía dưới -->
+                        
+                        <div class="pi-price">
+                            <h2 style="font-size: 20px;">Chủ nhiệm GEN IV</h2>
+                        </div>
+                        <ul>
+                            <li>Chị Lương Phương Nhung (đương nhiệm), Với bản lĩnh và sự gần gũi, chị Phương Nhung mang đến hình ảnh một Chủ nhiệm thân thiện, luôn lắng nghe và đồng hành cùng thành viên. Dưới nhiệm kỳ của chị, CLB ngày càng trẻ trung, năng động và hướng đến những hoạt động gắn kết cộng đồng nhiều hơn.</li>
+                            
+                        </ul>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section End -->
+
 
 
     
@@ -771,6 +889,15 @@ Chị từng được Trường Đại học Thủy Lợi viết bài vinh danh 
             }
         });
     </script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000, // thời gian hiệu ứng (ms)
+        once: true      // chỉ chạy 1 lần khi cuộn đến
+    });
+    </script>
+
 
 
 
