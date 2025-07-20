@@ -81,20 +81,27 @@
   }
 
   #intro {
-    position: fixed;
+    position: fixed; /* Hoặc absolute tùy vào layout */
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-    background-color: black;
-  }
+    width: 100vw; /* 100% chiều rộng của màn hình */
+    height: 100vh; /* 100% chiều cao của màn hình */
+    overflow: hidden; /* Ẩn bất kỳ phần nào của video bị tràn ra ngoài */
+    z-index: 999; /* Đảm bảo video nằm trên các nội dung khác */
+}
 
   #intro video {
+    /* Đảm bảo video luôn cố gắng lấp đầy thẻ chứa */
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Đảm bảo video bao phủ toàn màn */
-  }
+
+    /* Phép thuật nằm ở đây! */
+    /* - cover: Phóng to video để lấp đầy không gian mà không làm méo hình. 
+      Phần thừa sẽ bị cắt đi (ẩn bởi overflow: hidden).
+      - Giống hệt background-size: cover cho ảnh.
+    */
+    object-fit: cover; 
+}
 
 </style>
 
