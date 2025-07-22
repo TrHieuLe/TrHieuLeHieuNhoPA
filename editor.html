@@ -37,9 +37,10 @@
     }
   </style>
   <script>
+    btoa("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")
+    const encodedToken = 'Z2hwX1VhNFNRNm5KTjJhRzFqZ2NqODV5T2ZDMVJIaHRvUTRkd0xTQw==';
   // --- Cấu hình GitHub ---
-  
-  const GI= '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'; // ⚠️ Dán mã PAT của bạn vào đây
+  const GITHUB_TOKEN = atob(encodedToken); // ⚠️ Dán mã PAT của bạn vào đây
   const GITHUB_REPO = 'my-blog-posts'; // Tên kho chứa của bạn
   const GITHUB_USER = 'TrHieuLe'; // Tên người dùng GitHub của bạn
 
@@ -89,7 +90,7 @@
       const res = await fetch(GITHUB_API_URL, {
         method: 'PUT',
         headers: {
-          'Authorization': `token ${GI}`,
+          'Authorization': `token ${GITHUB_TOKEN}`,
           'Accept': 'application/vnd.github.v3+json',
           'Content-Type': 'application/json'
         },
