@@ -38,8 +38,8 @@
   </style>
   <script>
   // --- Cấu hình GitHub ---
-  const token="gh_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  const GITHUB_TOKEN = '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'; // ⚠️ Dán mã PAT của bạn vào đây
+  
+  const GI= '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'; // ⚠️ Dán mã PAT của bạn vào đây
   const GITHUB_REPO = 'my-blog-posts'; // Tên kho chứa của bạn
   const GITHUB_USER = 'TrHieuLe'; // Tên người dùng GitHub của bạn
 
@@ -89,7 +89,7 @@
       const res = await fetch(GITHUB_API_URL, {
         method: 'PUT',
         headers: {
-          'Authorization': `token ${GITHUB_TOKEN}`,
+          'Authorization': `token ${GI}`,
           'Accept': 'application/vnd.github.v3+json',
           'Content-Type': 'application/json'
         },
