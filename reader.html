@@ -36,7 +36,7 @@
 
   <script>
     // --- Cấu hình GitHub (giống hệt file đăng bài) ---
-    const GITHUB_TOKEN = 'none'; // ⚠️ Dán mã PAT của bạn vào đây
+    const GI = 'none'; // ⚠️ Dán mã PAT của bạn vào đây
     const GITHUB_REPO = 'my-blog-posts'; // Tên kho chứa của bạn
     const GITHUB_USER = 'TrHieuLe'; // Tên người dùng GitHub của bạn
 
@@ -74,7 +74,7 @@
       try {
         const res = await fetch(GITHUB_API_URL, {
           headers: {
-            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Authorization': `token ${GI}`,
             'Accept': 'application/vnd.github.v3+json'
           }
         });
